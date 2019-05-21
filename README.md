@@ -1,2 +1,2 @@
 # react-demo
-A project for learning and sharing
+A project for learning and sharing.
