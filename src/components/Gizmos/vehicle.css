@@ -1,0 +1,23 @@
+
+.vehicle {
+	position: absolute;
+	bottom: 0;
+	left: 0%;
+	height: 100%;
+	width: 60%;
+	transition: bottom 2.0s linear;
+}
+
+.vehicle-rollout {
+	  animation: robotWalk 8.0s forwards linear;
+}
+
+@keyframes robotWalk {
+      0% {
+        left: 0;
+      }     
+
+      100% {
+      	left: 160%;
+      }
+}

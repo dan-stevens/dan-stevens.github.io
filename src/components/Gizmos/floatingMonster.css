@@ -1,0 +1,94 @@
+.floating-monster {
+	position: fixed;
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+
+.floating-monster-top {
+  display: block;
+  left: -100px;
+  top: -100px;
+  animation-name: floating-monster-top;
+  animation-duration: 4s;
+	animation-iteration-count: 1;
+}
+
+.floating-monster-right {
+  display: block;
+  right: -100px;
+  top: -100px;
+  left: auto;
+  animation-name: floating-monster-right;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+.floating-monster-bottom {
+  left: -100px;
+  bottom: -100px;
+  display: block;
+  animation-name: floating-monster-bottom;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+.floating-monster-left {
+  left: -100px;
+  top: -100px;
+  display: block;
+  animation-name: floating-monster-left;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes floating-monster-top {
+    0% {
+      top: -100px;
+    }
+    50% {
+      top: 100px;
+    }
+    100% {
+      top: -100px;
+    }
+}
+
+@keyframes floating-monster-right {
+  0% {
+    right: -100px;
+  }
+  50% {
+    right: 100px;
+  }
+  100% {
+    right: -100px;
+  }
+}
+
+@keyframes floating-monster-bottom {
+  0% {
+    bottom: -100px;
+  }
+  50% {
+    bottom: 100px;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
+
+@keyframes floating-monster-left {
+  0% {
+    left: -100px;
+  }
+  50% {
+    left: 100px;
+  }
+  100% {
+    left: -100px;
+  }
+}

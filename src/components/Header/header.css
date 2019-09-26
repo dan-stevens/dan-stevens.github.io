@@ -1,0 +1,140 @@
+.header-container {
+	display: grid;
+	grid-template: repeat(20, 50px) / repeat(10, 1fr);
+	background-color: #039be5;
+}
+
+/*.navigation-container {
+	display: grid;
+	grid-area: 1 / 1 / 3 / -1;
+	margin: 0 auto;
+}*/
+
+.navigation-container {
+	padding: 0px;
+	margin: 0px;
+	align-items: center;
+	display: grid;
+	grid-area: 1 / 2 / 3 / 10;
+}
+
+	.navigation-container ul {
+		display: grid;
+    	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    	padding: 0px;
+    	align-items: center;
+    	justify-items: center;
+	}
+
+		.navigation-container ul li {
+			color: #fff;
+			font-weight: 600;
+			display: inline;
+			cursor: pointer;
+		}
+
+		.navigation-container ul li.home {
+			font-family: 'Permanent Marker', cursive;
+			font-size: 40px;
+			line-height: 40px;
+			letter-spacing: -10px;
+		}
+
+		.navigation-container ul li.disabled-nav {
+			opacity: 0.25;
+			cursor: default;
+		}
+
+.header-bio {
+	grid-area: 3 / 3 / 15 / 11;
+	background-image: url('../../images/bio.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: #fff;
+	border-radius: 2px 0 0 0;
+	border-bottom: 4px solid #283593;
+}
+
+.header-greeting {
+	grid-area: 6 / 2 / 17 / 7;
+	background-color: #f44336;		
+	color: #fff;
+	position: relative;
+	border-radius: 2px;
+}
+
+	.header-greeting:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		height: 10px;
+		width: 100%;
+		background-color: #d32f2f;
+	}
+
+	.header-greeting:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		height: 4px;
+		width: 100%;
+		background-color: #b71c1c;
+	}
+
+	.header-greeting h1 {
+		font-family: 'Permanent Marker', cursive;
+		line-height: 100px;
+		margin: -40px 0 40px;
+		text-align: center;
+		color: #000;
+		font-size: 140px;
+	}
+
+	.header-greeting p {
+		padding: 0 40px 40px;
+	} 
+
+.social-container {
+	display: grid;
+	grid-area: 15 / 7 / 17 / -1;
+	align-items: center;
+	justify-items: center;
+	margin: 0px;
+	padding: 0px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	font-size: 30px;
+}
+
+	.social-container li {
+		display: inline;
+	}
+
+		.social-container a {
+			color: #fff;
+		}
+
+.scroll-down-container {
+	grid-area: 18 / 1 / -1 / -1;
+	display: grid;	
+	align-items: center;
+	justify-items: center;
+	color: #fff;
+}
+
+	.scroll-down-container i {
+		position: relative;
+		font-size: 18px;
+		cursor: pointer;
+	}
+
+	.scroll-down-container i:after {
+		content: '';
+		border-radius: 50%;
+		position: absolute;
+		border: 3.5px solid #fff;
+		width: 30px;
+		height: 30px;
+		left: -11px;
+		top: -10px;
+	}

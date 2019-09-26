@@ -1,0 +1,71 @@
+#frame {
+	left: -100%;
+	width: 420px;
+	height: 300px;
+	transition: left 1.0s, bottom 2.0s;
+	position: absolute;
+	padding-bottom: 14px;
+	bottom: calc(100%  - 300px);
+}
+
+#frame * {
+	transition: fill 1.0s linear;
+}
+
+.default #body {
+	fill: #fff;
+}
+
+.cool #body {
+	fill: aquamarine;
+}
+
+.hot #body {
+	fill: #d60e0e;
+}
+
+.eco #body {
+	fill: #30d428;
+}
+
+.classic #body {
+	fill: #efda21;
+}
+
+.sleek #body {
+	fill: #6a6a6a;
+}
+
+.rusty #body {
+	fill: #8f4b21;
+}
+
+#frame.frameFall {
+  animation-name: frameFall;
+  animation-duration: 0.5s;
+/*  animation-iteration-count: 1;*/
+  /*animation-fill-mode: forwards;*/
+  animation-timing-function: ease-in;
+  bottom: 0;
+  /*animation-timing-function: cubic-bezier(1,.09,.69,1.27);*/
+}
+
+@keyframes frameFall {
+  0% {
+    bottom: calc(100%  - 300px);
+  }
+  85% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+  95% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+}
