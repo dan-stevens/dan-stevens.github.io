@@ -2,22 +2,16 @@ import React from 'react';
 import {Vehicle} from './vehicle';
 import {Crane} from './crane';
 import {Frame} from './frame';
-import {Monster} from './monster';
-import {FloatingMonster} from './floatingMonster';
 import {GizmoControls} from './gizmoControls';
 import * as animation from './gizmoAnimations.js';
 import './gizmo.css';
 import './mechanic.css';
-import './monster.css';
-import './floatingMonster.css';
 import './vehicle.css';
 
 export class GizmoSection extends React.Component {
   constructor(props) {
 	super(props);
-	//this.rollOutVehicle = this.rollOutVehicle.bind(this);
 	this.toggleComponent = this.toggleComponent.bind(this);
-	//this.bringInElement = this.bringInElement.bind(this);
 	this.newFrame = this.newFrame.bind(this);
 	this.newVehicle = this.newVehicle.bind(this);
   }
@@ -93,115 +87,6 @@ export class GizmoSection extends React.Component {
 		}
 	}
 
-	// bringInWheels() {
-	// 	if(!this.state.craneCurrentlyAnimating) {
-	// 		this.setState({
-	// 		  animationQueue: [
-	// 			  {
-	// 			  	animationName: 'craneOffScreen',
-	// 			  	animationSequence: animation.craneOffScreen,
-	// 			  	priority: 1
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneIntoScreen',
-	// 			  	animationSequence: animation.craneIntoScreen,
-	// 			  	priority: 2
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'elementIntoScreen',
-	// 			  	animationSequence: animation.elementIntoScreen,
-	// 			  	element: element + '0',
-	// 			  	priority: 2
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawLower',
-	// 			  	animationSequence: animation.craneClawLower,
-	// 			  	priority: 3
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'elementLower',
-	// 			  	animationSequence: animation.elementLower,
-	// 			  	element: 'a',
-	// 			  	priority: 3
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawLeftOpen',
-	// 			  	animationSequence: animation.craneClawLeftOpen,
-	// 			  	priority: 4
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawRightOpen',
-	// 			  	animationSequence: animation.craneClawRightOpen,
-	// 			  	priority: 4  	
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawRaise',
-	// 			  	animationSequence: animation.craneClawRaise,
-	// 			  	priority: 5
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneReset',
-	// 			  	animationSequence: animation.craneReset,
-	// 			  	priority: 6
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneOffScreen',
-	// 			  	animationSequence: animation.craneOffScreen,
-	// 			  	priority: 7
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneIntoScreen',
-	// 			  	animationSequence: animation.craneIntoScreen,
-	// 			  	priority: 8
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'elementIntoScreen',
-	// 			  	animationSequence: animation.elementIntoScreen,
-	// 			  	element:
-	// 			  	priority: 8
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawLower',
-	// 			  	animationSequence: animation.craneClawLower,
-	// 			  	element: element,
-	// 			  	priority: 9
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'elementLower',
-	// 			  	animationSequence: animation.elementLower,
-	// 			  	element: 
-	// 			  	priority: 9
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawLeftOpen',
-	// 			  	animationSequence: animation.craneClawLeftOpen,
-	// 			  	priority: 10
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawRightOpen',
-	// 			  	animationSequence: animation.craneClawRightOpen,
-	// 			  	priority: 10 	
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneClawRaise',
-	// 			  	animationSequence: animation.craneClawRaise
-	// 			  	priority: 11
-	// 			  },
-	// 			  {
-	// 			  	animationName: 'craneReset',
-	// 			  	animationSequence: animation.craneReset,
-	// 			  	priority: 12
-	// 			  }
-	// 			]
-	// 		})
-	// 	}
-	// }
-	// cycleWheelOption = () => {
-	// 	this.setState({
-	// 		currentWheelOption: this.state.currentWheelOption + 1,			
-	// 	})		
-	// }
-
 	toggleComponent(componentState) {		
 		this.setState({
 			[componentState]: !this.state[componentState]
@@ -209,7 +94,7 @@ export class GizmoSection extends React.Component {
 	}
 
 	bringInGizmo() {	
-		if (!this.state.craneCurrentlyAnimating) {			
+		if (!this.state.craneCurrentlyAnimating && this.state.disableGizmoButton === false) {			
 		this.setState({
 		craneCurrentlyAnimating: true,
 		displayGizmo: true,
@@ -479,38 +364,6 @@ export class GizmoSection extends React.Component {
 		});
 	 }
 	}
-	
-	// createMonster(monsterState, monsterProps) {		
-	// 	this.setState({
-	// 		monsterCount: this.state.monsterCount + 1,
-	// 		monsterArray: [...this.state.monsterArray, 
-	// 		  <Monster 
-	// 		    key={this.state.monsterCount} 
-	// 		    id={monsterProps.number}
-	// 		    number={monsterProps.number}
-	// 		    color = {monsterState.color}
-	// 		    species={monsterState.species} 
-	// 		    onRemove={this.removeComponent}
-	// 		    oncreateFloatingMonster={this.createFloatingMonster}
-	// 		  />
-	// 		]
-	// 	});
-	// }
-
-	// createFloatingMonster(monsterState, monsterProps) {
-	// 	this.setState({
-	// 		floatingMonsterCount: this.state.floatingMonsterCount + 1,
-	// 		floatingMonsterArray: [...this.state.floatingMonsterArray, 
-	// 		  <FloatingMonster 
-	// 		    key={this.state.floatingMonsterCount} 
-	// 		    id={'floating-monster-id-' + monsterProps.number}
-	// 		    number={monsterProps.number}
-	// 		    species={monsterProps.species} 
-	// 		    color={monsterState.color}
-	// 		  />
-	// 		]
-	// 	});
-	// }
 
 	//current animation's done
 	currentAnimationFinished(animate) {
@@ -609,12 +462,12 @@ export class GizmoSection extends React.Component {
 			  <section className='gizmo-creater-container'>	
 			  	{vehicle}
 			  </section>
-			<div id='gizmo-lift'>
-				<div id="clouds">
+			  <div id="clouds">
 				  <div className="cloud-left" />
 				  <div className="cloud-center" />
 				  <div className="cloud-right" />
 				</div>
+			<div id='gizmo-lift'>				
 			</div>
 			<section className='gizmo-mechanic-container'>
 			<div id='gizmo-mechanic-outer'>
@@ -661,14 +514,10 @@ export class GizmoSection extends React.Component {
              />
                                           
             </section>           
-            <section className='gizmo-result-container'>
-             {this.state.monsterArray}
+            <section className='gizmo-result-container'>             
              <div className='gizmo-result-track-container'>
                <div className='gizmo-result-track-upper' />
              </div>
-            </section>
-            <section className='floating-monster-container'>
-            	{this.state.floatingMonsterArray}
             </section>
 	      </div>
 		)

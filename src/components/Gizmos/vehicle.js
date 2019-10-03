@@ -1,6 +1,7 @@
 import React from 'react';
 import {Gizmo} from './gizmo';
 import {Frame} from './frame';
+import updateMonitor from './monitor';
 
 export class Vehicle extends React.Component {
 	constructor(props) {
@@ -17,22 +18,6 @@ export class Vehicle extends React.Component {
 	    {
 	      id: 1,
 		  frameTypeName: 'fire-truck'
-	    },
-	    {
-	      id: 2,
-		  frameTypeName: 'school-bus'
-	    },
-	    {
-	      id: 3,
-		  frameTypeName: 'tractor'
-	    },
-	    {
-	      id: 4,
-		  frameTypeName: 'police-car'
-	    },
-	    {
-	      id: 5,
-		  frameTypeName: 'garbage-truck'
 	    }
 		] 
 	  }	  
@@ -40,20 +25,21 @@ export class Vehicle extends React.Component {
 
 	componentWillUpdate(prevProps, prevState) {	
 		//Bring in frame
-		if (this.props.displayFrame && this.state.displayFrame === false) {						
-			this.setState({
-				displayFrame: true
-			})
+		if (this.props.displayFrame && this.state.displayFrame === false && prevState.displayFrame === false) {	
+		  updateMonitor('Vehicle componentWillUpdate called');					
+	      this.setState({
+			displayFrame: true
+		  });			
 		}
 		
 		//Remove frame
-		if (!this.props.displayFrame && this.state.displayFrame === true) {						
-			this.setState({
-				displayFrame: false
-			})
+		if (!this.props.displayFrame && this.state.displayFrame === true && prevState.displayFrame === true) {								
+	      this.setState({
+			displayFrame: false
+		  })
 		}
 
-		console.log(this.props.currentFrameOption.frameOptionName);
+		
 	}
 
 	componentWillUnmount() {			

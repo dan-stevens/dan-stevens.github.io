@@ -6,6 +6,7 @@
 	position: absolute;
 	padding-bottom: 14px;
 	bottom: calc(100%  - 300px);
+  z-index: 2;
 }
 
 #frame * {
@@ -43,11 +44,8 @@
 #frame.frameFall {
   animation-name: frameFall;
   animation-duration: 0.5s;
-/*  animation-iteration-count: 1;*/
-  /*animation-fill-mode: forwards;*/
   animation-timing-function: ease-in;
   bottom: 0;
-  /*animation-timing-function: cubic-bezier(1,.09,.69,1.27);*/
 }
 
 @keyframes frameFall {

@@ -1,5 +1,6 @@
 import React from 'react';
 import {SVGFrame} from './svgFrame';
+import updateMonitor from './monitor';
 import './frame.css';
 
 export class Frame extends React.Component {
@@ -10,22 +11,11 @@ export class Frame extends React.Component {
 	componentDidMount() {
 	}
 
-	componentWillUpdate(prevProps, prevState) {	
+	componentWillUpdate(prevProps, prevState) {
 	}
 
 	componentWillUnmount() {
 		this.props.cycleFrameType(this.props.currentFrameType.id);
-		// if (this.state.currentFrameType === this.state.frameTypes.length) {
-		// 	console.log('here');
-		// 		this.setState({
-		// 			currentFrameType: 0
-		// 		})
-		// 	} else {
-		// 		console.log('ok here');
-		// 		this.setState({
-		// 			currentFrameType: this.state.currentFrameType + 1
-		// 		})
-		// 	}
 	}
 
 	render() {

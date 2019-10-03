@@ -1,4 +1,5 @@
 import React from 'react';
+import updateMonitor from './monitor';
 
 export class Gizmo extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ export class Gizmo extends React.Component {
     this.state = {     
       preMountEvents: ''
     };
-    this.componentLifeCycleEvent = this.componentLifeCycleEvent.bind(this);
+    //this.componentLifeCycleEvent = this.componentLifeCycleEvent.bind(this);
   }
 
 
@@ -15,25 +16,26 @@ export class Gizmo extends React.Component {
 
 
 
-  componentLifeCycleEvent(lifeCycleEvent, prevProps, prevState) {
-    document.getElementById('gizmo-updates-screen').prepend(lifeCycleEvent);
-  }
+  // componentLifeCycleEvent(lifeCycleEvent, prevProps, prevState) {
+  //   //document.getElementById('gizmo-updates-screen').prepend(lifeCycleEvent);
+  //   updateMonitor(lifeCycleEvent);
+  // }
 
   componentWillMount() {
-	this.setState({
-		preMountEvents: 'componentWillMount called'
- 	});
+	// this.setState({
+	// 	preMountEvents: 'componentWillMount called'
+ // 	});
+    //updateMonitor('componentWillMount called');
   }
 
   componentDidMount() {
-    this.componentLifeCycleEvent('componentDidMount called');
+    updateMonitor('Gizmo componentDidMount called');
   }
 
   componentDidUpdate(prevProps, prevState) {
-  	if (prevState !== this.state) {
-  		this.componentLifeCycleEvent('componentDidUpdate called', prevProps.number, prevState);
-  	}
-  	if (prevProps.number !== this.props.number) {
+    if (prevState !== this.state) {
+      //updateMonitor('Gizmo componentDidUpdate called');
+
   	}
   }  
 

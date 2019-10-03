@@ -39,7 +39,6 @@ export const frameFall = (animate) => {
   return (cssAnimationToPromise(animate, element, 'frameFall', [], {property: 'bottom', value: '0px'}));
 }
 
-
 export const dustClouds = (animate) => {
   const element = document.getElementById(animate.element);
   return (cssAnimationToPromise(animate, element, 'dustClouds', ['dustClouds']));
@@ -61,11 +60,10 @@ export const craneReset = (animate) => {
 }
 
 
-
 //Set of animations that use the mechanic to remove frame parts
 export const mechanicAlign1 = (animate) => {
   const element = document.getElementById('gizmo-mechanic-outer');
-   return (cssTransitionToPromise(animate, element, 'margin-left', '40%'))
+   return (cssTransitionToPromise(animate, element, 'margin-left', '130px'))
 }
 
 export const mechanicRaise = (animate) => {
@@ -100,12 +98,12 @@ export const frameLower = (animate) => {
 
 export const mechanicOffScreen = (animate) => {
   const element = document.getElementById('gizmo-mechanic-outer');
-   return (cssTransitionToPromise(animate, element, 'margin-left', '-60%'))
+   return (cssTransitionToPromise(animate, element, 'margin-left', '-50%'))
 }
 
 export const frameOffScreen = (animate) => {
   const element = document.getElementById('frame');
-   return (cssTransitionToPromise(animate, element, 'left', '-60%'))
+   return (cssTransitionToPromise(animate, element, 'left', '-100%'))
 }
 
 export const mechanicReset = (animate) => {
@@ -113,59 +111,8 @@ export const mechanicReset = (animate) => {
    return (cssTransitionToPromise(animate, element, 'margin-left', '20px'))
 }
 
-// Set of animations that pick up a gizmo, move it to the converter, drop it, and reset.
-
-//craneIntoScreen
-
-// export const craneClawLower = (animate) => {
-//   const element = document.getElementById('crane-line');
-//    return (cssTransitionToPromise(animate, element, 'height', '300px'))
-// }
-
-// export const craneClawLeftClose = (animate) => {
-//   const element = document.getElementById('crane-claw-left');
-//    return (cssTransitionToPromise(animate, element, 'transform', 'rotate(0deg)'))
-// }
-
-// export const craneClawRightClose = (animate) => {
-//   const element = document.getElementById('crane-claw-right');
-//    return (cssTransitionToPromise(animate, element, 'transform', 'rotate(0deg)'))
-// }
-
-// export const craneClawPickup = (animate) => {
-//   const element = document.getElementById('crane-line');
-//    return (cssTransitionToPromise(animate, element, 'height', '100%'))
-// }
-
-// export const gizmoPickup = (animate) => {
-//   const element = document.getElementById('gizmoId-' + animate.monsterNumber);
-//    return (cssTransitionToPromise(animate, element, 'bottom', 'calc(100% - 200px'))
-// }
-
-// export const craneToDrop = (animate) => {
-//   const element = document.getElementById('crane');
-//    return (cssTransitionToPromise(animate, element, 'margin-left', '70%'))
-// }
-
-// export const monsterToDrop = (animate) => {
-//   const element = document.getElementById('gizmoId-' + animate.monsterNumber);
-//    return (cssTransitionToPromise(animate, element, 'left', '50%'))
-// }
-
-// //craneClawOpen
-
-// export const monsterDrop = (animate) => {
-//   const element = document.getElementById('gizmoId-' + animate.monsterNumber);
-//    return (cssTransitionToPromise(animate, element, 'bottom', '0px'))
-// }
-
-//gizmoSpin
-
-//craneReset
-
 
 // Set of animations that set the gizmo, frame and lift down.
-
 export const lowerLift = (animate) => {
   const element = document.getElementById('gizmo-lift');
   return (cssTransitionToPromise(animate, element, 'margin-top', '200px'))
@@ -188,7 +135,6 @@ export const resetLift = (animate) => {
 
 
 //Set of animations to swap out wheels
-
 export const craneClawLower = (animate) => {
   const element = document.getElementById('crane-line');
    return (cssTransitionToPromise(animate, element, 'height', '300px'))
