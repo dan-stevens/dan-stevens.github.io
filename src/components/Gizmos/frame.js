@@ -12,6 +12,9 @@ export class Frame extends React.Component {
 	}
 
 	componentWillUpdate(prevProps, prevState) {
+		if (prevProps.currentFrameType !== this.props.currentFrameType) {
+		  updateMonitor('Gizmo componentDidMount called');
+		}		
 	}
 
 	componentWillUnmount() {

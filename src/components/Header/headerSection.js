@@ -7,14 +7,17 @@ export class HeaderSection extends React.Component {
 
 		return(
 			<section className='header-container'>
-				<nav className='navigation-container'>
+				<nav id='navigation-container'>
+					<div className='mobile-nav-bg mobile-nav-upper' />
+					<div className='mobile-nav-bg mobile-nav-lower' />
 					<ul>
 						<li className='disabled-nav'>About Me</li>
 						<li className='disabled-nav'>Work</li>
-						<li className='home'>DS</li>					
+						<li className='home' onClick={() => toggleMobileNav()}>DS</li>					
 						<li className='disabled-nav'>Reach Out</li>
 						<li onClick={() => scrollToSection('gizmoSectionAnchor')}>Build a Truck!</li>
 					</ul>
+					
 				</nav>
 				<div className='header-bio'>
 				</div>
@@ -36,6 +39,11 @@ export class HeaderSection extends React.Component {
 			</section>
 		)
 	}
+}
+
+const toggleMobileNav = () => {
+	const navigationContainer = document.getElementById('navigation-container');
+	navigationContainer.classList.toggle('showNavigationContainer');
 }
 
 const scrollToSection = (element) => {

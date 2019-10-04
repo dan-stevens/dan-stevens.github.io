@@ -50,8 +50,6 @@ export class Vehicle extends React.Component {
   	}
 
 	cycleFrameType = (currentFrameType) => {
-		console.log('cycleFrameType: ' + currentFrameType);
-		console.log('this.state.frameTypes.length: ' + this.state.frameTypes.length)
 		if (currentFrameType < this.state.frameTypes.length - 1) {
 			this.setState({
 				currentFrameTypeId: this.state.currentFrameTypeId + 1		
@@ -70,7 +68,6 @@ export class Vehicle extends React.Component {
 
 
 		if (this.state.displayFrame) {
-			console.log(this.props.currentFrameOption);
 			frame = <Frame 
 				currentFrameType={this.state.frameTypes[this.state.currentFrameTypeId]} 
 				cycleFrameType={this.cycleFrameType} 
